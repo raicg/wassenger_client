@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.email       = ["raicg2@gmail.com", "wkelyson@gmail.com"]
   s.version     = '0.1.0'
   s.homepage    = "https://www.github.com/raicg/wassenger_client"
-  s.summary     = "Ruby client for wassenger.com"
-  s.description = "Ruby client for wassenger.com"
+  s.summary     = "Ruby client for wassenger.com API"
+  s.description = "Ruby client for wassenger.com API"
   s.files = Dir["{app,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
   s.licenses    = ['MIT']
