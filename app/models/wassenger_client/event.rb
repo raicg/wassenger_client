@@ -5,11 +5,11 @@ module WassengerClient
     def message
       WassengerClient::Message.new(data)
     end
-    
+
     def sent_message?
       event == 'message:out:sent'
-    end  
-    
+    end
+
     def failed_message?
       event == 'message:out:failed'
     end
