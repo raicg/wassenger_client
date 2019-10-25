@@ -32,27 +32,32 @@ module WassengerClient
 
       def post(params = {})
         request = request(:post, params)
-        client.request(request).read_body
+        response = client.request(request).read_body
+        JSON.parse(response) if !response.nil?
       end
 
       def get(params = {})
         request = request(:get, params)
-        client.request(request).read_body
+        response = client.request(request).read_body
+        JSON.parse(response) if !response.nil?
       end
 
       def update(id)
         request = request(:update, {}, id)
-        client.request(request).read_body
+        response = client.request(request).read_body
+        JSON.parse(response) if !response.nil?
       end
 
       def delete(id)
         request = request(:delete, {}, id)
-        client.request(request).read_body
+        response = client.request(request).read_body
+        JSON.parse(response) if !response.nil?
       end
 
       def get_details(id)
         request = request(:get_details, {}, id)
-        client.request(request).read_body
+        response = client.request(request).read_body
+        JSON.parse(response) if !response.nil?
       end
 
       def base_url
