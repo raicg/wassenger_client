@@ -1,14 +1,34 @@
 # frozen_string_literal: true
 
 module WassengerClient
-  class Webhook < WassengerClient::Client
+  class Webhook < OpenStruct
     class << self
       def base_url
         WassengerClient::Client.base_url + 'webhooks'
       end
 
+      def get(query = {})
+        WassengerClient::Client.get(base_url, '', {}, '', query)
+      end
+
       def register(params = {})
-        post(params)
+        WassengerClient::Client.post(base_url, '', params)
+      end
+
+      def enable(id = '0')
+        WassengerClient::Client.post(base_url, id, {}, '/enable')
+      end
+
+      def get_details(id = '0')
+        WassengerClient::Client.get(base_url, id)
+      end
+
+      def update(id = '0', params = {})
+        WassengerClient::Client.patch(base_url, id, params)
+      end
+
+      def delete(id = '0')
+        WassengerClient::Client.delete(base_url, id)
       end
     end
   end
