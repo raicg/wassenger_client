@@ -6,6 +6,10 @@ module WassengerClient
       def base_url
         WassengerClient::Client.base_url + 'devices'
       end
+
+      def create(params = {})
+        post(params)
+      end
     end
   end
 end
