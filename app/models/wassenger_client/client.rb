@@ -18,10 +18,10 @@ module WassengerClient
         URI(base_url)
       end
 
-      def request(type = :get, params = {})
+      def request(type = :get, params = {}, id = '0')
         request = Net::HTTP::Get.new(url) if type == :get
         request = Net::HTTP::Post.new(url) if type == :post
-        request = Net::HTTP::Delete.new(url) if type == :delete
+        request = Net::HTTP::Delete.new(URI(base_url.concat("/#{id}"))) if type == :delete
         request['content-type'] = 'application/json'
         request['token'] = ENV['WASSENGER_TOKEN']
         request.body = "#{params.to_json}" if !params.blank?
@@ -38,8 +38,8 @@ module WassengerClient
         client.request(request).read_body
       end
 
-      def delete(params = {})
-        request = request(:delete, params)
+      def delete(id)
+        request = request(:delete, {}, id)
         client.request(request).read_body
       end
 
