@@ -24,7 +24,7 @@ module WassengerClient
         request = Net::HTTP::Delete.new(url) if type == :delete
         request['content-type'] = 'application/json'
         request['token'] = ENV['WASSENGER_TOKEN']
-        request.body = "#{params.to_json}"
+        request.body = "#{params.to_json}" if !params.blank?
         request
       end
 
