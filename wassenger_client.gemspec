@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name        = "wassenger_client"
   s.authors     = ["Raí Gondim", "Wilbert Ribeiro"]
   s.email       = ["raicg2@gmail.com", "wkelyson@gmail.com"]
-  s.version     = '0.1.1'
+  s.version     = '0.2.0'
   s.homepage    = "https://www.github.com/raicg/wassenger_client"
   s.summary     = "Ruby client for wassenger.com API"
   s.description = "Ruby client for wassenger.com API"
