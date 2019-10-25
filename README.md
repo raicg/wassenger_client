@@ -25,7 +25,7 @@ First of all you need to create the variable ENV['WASSENGER_TOKEN'] with your to
 ### Creating Webhooks:
 
 ```ruby
-response = WassengerClient::Webhook.post(
+response = WassengerClient::Webhook.register(
 name: 'name of the webhook',
 url: 'your_website_url.com/webhook',
 events: ['message:in:new']
@@ -41,7 +41,7 @@ params = {
     message: 'message to send'
 }
 
-wassenger_client_response = WassengerClient::Message.post(params)
+wassenger_client_response = WassengerClient::Message.send(params)
 ```
 You can use more params, look at the documentation (https://docs.wassenger.com/#operation/createMessage)
 
