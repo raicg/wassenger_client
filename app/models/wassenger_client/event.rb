@@ -5,7 +5,7 @@ module WassengerClient
     class << self
 
       def message
-        WassengerClient::Message.new(data)
+        WassengerClient::Message.new(self.data)
       end
 
       def sent_message?
