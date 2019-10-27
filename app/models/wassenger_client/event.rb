@@ -2,11 +2,12 @@
 
 module WassengerClient
   class Event < OpenStruct
-    class << self
 
-      def message
-        WassengerClient::Message.new(self.data)
-      end
+    def message
+      WassengerClient::Message.new(data)
+    end
+
+    class << self
 
       def sent_message?
         event == 'message:out:sent'
