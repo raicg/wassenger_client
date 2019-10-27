@@ -26,6 +26,10 @@ module WassengerClient
       def delete(id = '0')
         WassengerClient::Client.delete(base_url, id)
       end
+
+      def data
+        self[:data]
+      end
     end
   end
 end
