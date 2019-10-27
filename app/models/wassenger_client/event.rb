@@ -19,5 +19,6 @@ module WassengerClient
       def in_new?
         event == 'message:in:new'
       end
+    end
   end
 end
